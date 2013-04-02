@@ -8,7 +8,7 @@
 		<p>@T("Paste recipe steps in the section below")</p>
         <fieldset>
             @Html.LabelFor(m => m.RecipeSteps, T("RecipeSteps"))
-            @Html.TextAreaFor(m => m.RecipeSteps)
+            @Html.TextAreaFor(m => m.RecipeSteps, new { spellcheck = "false" })
         </fieldset>
         <button type="submit" class="primaryAction">@T("Import")</button>
     }
