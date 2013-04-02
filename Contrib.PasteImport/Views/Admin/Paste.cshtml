@@ -1,0 +1,15 @@
+﻿@model Contrib.PasteImport.ViewModels.PasteImportViewModel
+
+@{ 
+	Layout.Title = T("Import").ToString(); 
+
+    using (Html.BeginFormAntiForgeryPost(Url.Action("Paste", new { area = "Contrib.PasteExport" }), FormMethod.Post)) {
+        @Html.ValidationSummary();
+		<p>@T("Paste recipe steps in the section below")</p>
+        <fieldset>
+            @Html.LabelFor(m => m.RecipeSteps, T("RecipeSteps"))
+            @Html.TextAreaFor(m => m.RecipeSteps)
+        </fieldset>
+        <button type="submit" class="primaryAction">@T("Import")</button>
+    }
+}
