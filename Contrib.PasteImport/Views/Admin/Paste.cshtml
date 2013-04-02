@@ -1,7 +1,7 @@
 ﻿@model Contrib.PasteImport.ViewModels.PasteImportViewModel
 
 @{ 
-	Layout.Title = T("Import").ToString(); 
+	Layout.Title = T("Paste Import").ToString(); 
 
     using (Html.BeginFormAntiForgeryPost(Url.Action("Paste", new { area = "Contrib.PasteExport" }), FormMethod.Post)) {
         @Html.ValidationSummary();
