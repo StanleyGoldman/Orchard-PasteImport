@@ -1,13 +1,26 @@
 ﻿@model Contrib.PasteImport.ViewModels.PasteImportViewModel
 
 @{ 
-	Layout.Title = T("Paste Import").ToString(); 
-
-    using (Html.BeginFormAntiForgeryPost(Url.Action("Paste", new { area = "Contrib.PasteExport" }), FormMethod.Post)) {
+    Layout.Title = T("Paste").ToString();
+    
+    if (Model.RecipeJournal != null)
+    {
+        <div>
+            <h4>Result</h4>
+            <div>Status: @Model.RecipeJournal.Status.ToString()</div>
+            @foreach(var message in Model.RecipeJournal.Messages)
+            {
+                <div>@message.Message</div>
+            }
+        </div>
+    
+        <br/>
+    }
+    
+    using (Html.BeginFormAntiForgeryPost(Url.Action("Paste", new { }), FormMethod.Post)) {
         @Html.ValidationSummary();
-		<p>@T("Paste recipe steps in the section below")</p>
         <fieldset>
-            @Html.LabelFor(m => m.RecipeSteps, T("RecipeSteps"))
+            <h4>Recipe</h4>
             @Html.TextAreaFor(m => m.RecipeSteps, new { spellcheck = "false" })
         </fieldset>
         <button type="submit" class="primaryAction">@T("Import")</button>

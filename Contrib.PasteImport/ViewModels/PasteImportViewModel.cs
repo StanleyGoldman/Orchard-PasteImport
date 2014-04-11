@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using Orchard.Recipes.Models;
 
 namespace Contrib.PasteImport.ViewModels
 {
@@ -6,5 +7,7 @@ namespace Contrib.PasteImport.ViewModels
     {
         [Required]
         public string RecipeSteps { get; set; }
+
+        public RecipeJournal RecipeJournal { get; set; }
     }
 }

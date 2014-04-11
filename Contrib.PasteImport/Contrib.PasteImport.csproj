@@ -85,11 +85,13 @@
   <ItemGroup>
     <Compile Include="AdminMenu.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Services\CustomRecipeManager.cs" />
     <Compile Include="ViewModels\PasteImportViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Admin\Paste.cshtml" />
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
